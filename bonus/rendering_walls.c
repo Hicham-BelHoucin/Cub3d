@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rendering_walls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imabid <imabid@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 14:45:35 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/08/15 16:43:01 by imabid           ###   ########.fr       */
+/*   Updated: 2022/08/17 17:48:38 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	draw_wall_bonus(t_window *conf)
 	int	y;
 	int	dftop;
 
-	draw_ceilling_or_floor(conf, "C");
 	if (conf->wall.hitver[conf->wall.drawstartx])
 		offsetx = (int)conf->wall.wy[conf->wall.drawstartx] % TILE_SIZE;
 	else
@@ -33,7 +32,6 @@ void	draw_wall_bonus(t_window *conf)
 		put_pixle(conf, y, offsetx, offsety);
 		y++;
 	}
-	draw_ceilling_or_floor(conf, "F");
 }
 
 void	render3d_bonus(t_window *conf)

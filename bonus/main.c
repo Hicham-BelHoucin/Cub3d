@@ -6,7 +6,7 @@
 /*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:58:56 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/08/17 14:44:38 by hbel-hou         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:49:27 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	main_loop_bonus(t_window *window)
 {
 	mlx_clear_window(window->mlx, window->win);
+	draw_ceilling_or_floor(window, "C");
+	draw_ceilling_or_floor(window, "F");
 	rendering_walls_bonus(window);
 	mlx_hook(window->win, 2, 1L << 0, player_move_bonus, window);
 	mlx_hook(window->win, 17, 0, close_win, window);

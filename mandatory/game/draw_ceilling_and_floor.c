@@ -6,7 +6,7 @@
 /*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:42:33 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/08/05 13:31:21 by hbel-hou         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:47:48 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,36 @@
 static void	draw_ceilling(int color, t_window *conf)
 {
 	int	x;
+	int	y;
 
-	x = 0;
-	while (x < conf->wall.topwall)
+	y = 0;
+	while (y < HEIGHT / 2)
 	{
-		conf->addr[(x * WIDTH + conf->wall.drawstartx)] = color;
-		x++;
+		x = 0;
+		while (x < WIDTH)
+		{
+			conf->addr[(y * WIDTH + x)] = color;
+			x++;
+		}
+		y++;
 	}
 }
 
 static void	draw_floor(int color, t_window *conf)
 {
-	int	j;
+	int	y;
+	int	x;
 
-	j = conf->wall.bottomwall;
-	while (j < HEIGHT)
+	y = HEIGHT / 2;
+	while (y < HEIGHT)
 	{
-		conf->addr[(j * WIDTH + conf->wall.drawstartx)] = color;
-		j++;
+		x = 0;
+		while (x < WIDTH)
+		{
+			conf->addr[(y * WIDTH + x)] = color;
+			x++;
+		}
+		y++;
 	}
 }
 

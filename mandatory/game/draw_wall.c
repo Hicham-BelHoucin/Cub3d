@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_wall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imabid <imabid@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 17:30:43 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/08/15 13:54:24 by imabid           ###   ########.fr       */
+/*   Updated: 2022/08/17 17:46:09 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	draw_wall(t_window *conf)
 	int	color;
 	int	dftop;
 
-	draw_ceilling_or_floor(conf, "C");
 	if (conf->wall.hitver[conf->wall.drawstartx])
 		offsetx = (int)conf->wall.wy[conf->wall.drawstartx] % TILE_SIZE;
 	else
@@ -66,7 +65,6 @@ void	draw_wall(t_window *conf)
 				+ (conf->wall.drawstartx))] = color;
 		y++;
 	}
-	draw_ceilling_or_floor(conf, "F");
 }
 
 void	render3d(t_window *conf)
@@ -97,6 +95,8 @@ void	render3d(t_window *conf)
 void	rendering_walls(t_window *window)
 {
 	cast_rays(window);
+	draw_ceilling_or_floor(window, "C");
+	draw_ceilling_or_floor(window, "F");
 	render3d(window);
 	move_to(window);
 	rotate(window);
