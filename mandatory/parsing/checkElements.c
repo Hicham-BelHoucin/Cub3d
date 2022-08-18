@@ -6,7 +6,7 @@
 /*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:48:39 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/07/27 11:12:58 by hbel-hou         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:43:35 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	check_valid_path(char **map, int i, int j)
 			return (-1);
 	if (map[i][j] == ' ')
 	{
+		if (j - 1 == -1)
+			return (0);
 		if (map[i][j + 1] != '1' && map[i][j + 1] != ' '
 			&& !ft_strchr("SEWN", map[i][j + 1]))
 			return (print_error_pos(i, j, map[i][j]));
