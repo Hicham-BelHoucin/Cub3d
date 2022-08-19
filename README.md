@@ -10,15 +10,10 @@
 
 ## Some Screen Shots From The Game
 
-```
-    **Mandatory**
-```
+## Mandatory
 
 <img src="./screenshots/img.png"></img>
-
-```
-    **Bonus**
-```
+## Bonus
 
 <img src="./screenshots/img1.png"></img>
 <img src="./screenshots/img2.png"></img>
