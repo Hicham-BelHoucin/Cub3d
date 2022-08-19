@@ -6,7 +6,7 @@
 /*   By: hbel-hou <hbel-hou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:50:33 by hbel-hou          #+#    #+#             */
-/*   Updated: 2022/07/28 18:32:03 by hbel-hou         ###   ########.fr       */
+/*   Updated: 2022/08/19 11:07:02 by hbel-hou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int	check_map_colors(t_list *colors, t_colors *tofill, char **temp)
 	while (colors)
 	{
 		temp = ft_split((char *)colors->content + 2, ',');
+		if (ft_arr_length(temp) != 2)
+			return (display("Usage : Ex: [F 220,100,22 || C 220,100,22]"));
 		if (!temp)
 			return (display("Split Error"));
 		if (check_color_content(temp, tofill + i,
